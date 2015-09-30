@@ -1,10 +1,12 @@
+Snowflake [] stuff;
 void setup()
 {
-  //your code here
+  background(0, 204,100);
+  size(400,400);//your code here
 }
 void draw()
 {
-  //your code here
+   //your code here
 }
 void mouseDragged()
 {
@@ -13,31 +15,52 @@ void mouseDragged()
 
 class Snowflake
 {
-  //class member variable declarations
+  boolean isMoving;
+  int x , y;  //class member variable declarations
   Snowflake()
   {
-    //class member variable initializations
+    x = (int)(Math.random()*400);
+    y = (int)(Math.random()*400);
+    isMoving = true;  //class member variable initializations
   }
   void show()
   {
-    //your code here
+    fill(255);
+    ellipse(x,y,5,5);//your code here
   }
   void lookDown()
   {
-    //your code here
+    if (y > 0 && y < 400 && y + 10 != color(0))
+    {
+      isMoving = false;
+    }
+    else
+    {
+      isMoving = true;
+    }//your code here
+
   }
   void erase()
   {
-    //your code here
+    fill(0);
+    ellipse(x,y,8,8);//your code here
   }
   void move()
   {
-    //your code here
+    if (isMoving = true){
+      y = y + 1;
+    }//your code here
   }
   void wrap()
   {
-    //your code here
+    if ( y >= 400)
+    {
+      y = 0;
+      x = (int)(Math.random()*400);//your code here
+    }
   }
 }
+
+
 
 
